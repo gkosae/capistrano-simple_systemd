@@ -27,6 +27,27 @@ require "capistrano/simple_systemd"
 ```
 
 Service files are defined as ERB templates ending with `.service.erb` in `config/systemd`. <br>
+Sample erb template
+```
+[Unit]
+Description=SMS Service
+After=network.target
+
+[Service]
+Type=simple
+User=deploy
+Environment=RACK_ENV=<%= fetch(:stage) %>
+WorkingDirectory=<%= current_path %>
+ExecStart=<%= "#{fetch(:home_dir)}/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do bundle exec #{current_path}/bin/sms_service"%>
+TimeoutSec=10
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=sms-service
+
+[Install]
+WantedBy=multi-user.target
+```
 PLEASE NOTE: Currently only files with the  `.service.erb` extension are considered as service file templates. Others like `.target.erb` aren't supported yet
 
 The following tasks are provided out of the box
