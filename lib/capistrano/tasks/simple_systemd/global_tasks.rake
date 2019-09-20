@@ -34,6 +34,7 @@ namespace :systemd do
   task :'reload-daemons' do
     on release_roles :all do
       sudo :systemctl, :'daemon-reload'
+      # puts fetch(:service_file_local_dir)
     end
   end
 end
