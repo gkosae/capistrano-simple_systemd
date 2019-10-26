@@ -5,18 +5,18 @@ require "capistrano/simple_systemd/version"
 Gem::Specification.new do |spec|
   spec.name          = "capistrano-simple_systemd"
   spec.version       = Capistrano::SimpleSystemd::VERSION
-  spec.authors       = ["DarkWasp"]
+  spec.authors       = ["George Osae"]
   spec.email         = ["coderwasp@gmail.com"]
 
   spec.summary       = "Simple systemd integration for Capistrano."
-  spec.description   = "Simple systemd integration for Capistrano. Uploads service files"
-  spec.homepage      = "https://github.com/darkwasp99/capistrano-simple_systemd"
+  spec.description   = "Simple systemd integration for Capistrano. Uploads service files and provides rake tasks for managing these services"
+  spec.homepage      = "https://github.com/gkosae/capistrano-simple_systemd.git"
   spec.license       = "MIT"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/darkwasp99/capistrano-simple_systemd"
+  spec.metadata["source_code_uri"] = "https://github.com/gkosae/capistrano-simple_systemd.git"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

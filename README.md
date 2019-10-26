@@ -107,7 +107,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/darkwasp99/capistrano-simple_systemd.
+Bug reports and pull requests are welcome on GitHub at https://github.com/gkosae/capistrano-simple_systemd.git.
 
 ## License
 
