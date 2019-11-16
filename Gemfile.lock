@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    capistrano-simple_systemd (0.1.1)
+    capistrano-simple_systemd (0.2.0)
       capistrano (~> 3.7)
 
 GEM

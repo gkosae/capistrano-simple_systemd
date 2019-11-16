@@ -1,5 +1,5 @@
 # Changelog
-### Unreleased
+### v0.2.0, 2019-11-16 (Feature release)
 - Added the following specific tasks
   - cap {stage} systemd:{service}:upload to upload a single service file
   - cap {stage} systemd:{service}:remove to upload a single service file
