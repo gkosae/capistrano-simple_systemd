@@ -1,4 +1,4 @@
-# capistrano-simple_systemd
+# capistrano-simple_systemd [![Gem Version](https://badge.fury.io/rb/capistrano-simple_systemd.svg)](https://badge.fury.io/rb/capistrano-simple_systemd)
 
 Capistrano tasks to control mutiple services with systemd
 
@@ -52,8 +52,11 @@ PLEASE NOTE: Currently only files with the  `.service.erb` extension are conside
 
 The following tasks are provided out of the box
 ```ruby
-cap systemd:reload-daemons
-cap systemd:upload
+cap systemd:reload-daemons # run sudo systemctl daemon-reload
+cap systemd:upload         # upload all provided service files
+cap systemd:remove         # remove all provided service files
+cap systemd:enable         # enable all provided service files
+cap systemd:disable        # disable all provided service files
 ```
 
 The following tasks will be created for each service template detected in the `config/systemd` directory
@@ -66,6 +69,8 @@ cap systemd:{service}:reload-or-restart
 cap systemd:{service}:restart
 cap systemd:{service}:start
 cap systemd:{service}:stop
+cap systemd:{service}:upload
+cap systemd:{service}:remove
 ```
 Where `service` is the base name of the service template. <br>
 For example, placing `puma.service.erb` in the template directory will yield the following tasks
@@ -77,6 +82,8 @@ cap systemd:puma:reload-or-restart
 cap systemd:puma:restart
 cap systemd:puma:start
 cap systemd:puma:stop
+cap systemd:puma:upload
+cap systemd:puma:remove
 ```
 
 Run 
@@ -99,15 +106,13 @@ Services are enabled after upload by invoking `systemd:{service}:enable`. This b
 set :enable_services_after_upload, false
 ```
 
-## Development
-
-After checking out the repo, run `bundle`
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
 ## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/gkosae/capistrano-simple_systemd.git.
+All contributions are welcome. Improvements are especially welcome. To contribute
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
 ## License
 

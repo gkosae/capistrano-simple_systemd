@@ -1,13 +1,7 @@
 module Capistrano
   module SimpleSystemd
     module Paths
-      def self.service_file_local_dir
-        'config/systemd'
-      end
-
-      def self.service_file_remote_dir
-        '/etc/systemd/system'
-      end
+      SERVICE_FILE_LOCAL_DIR = 'config/systemd'
     end
   end
 end
