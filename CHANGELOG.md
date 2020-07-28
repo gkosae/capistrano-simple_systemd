@@ -1,4 +1,7 @@
 # Changelog
+### v0.2.1, 2020-07-28 (Maintenance release)
+- Merged dependabot's security updates
+
 ### v0.2.0, 2019-11-16 (Feature release)
 - Added the following specific tasks
   - cap {stage} systemd:{service}:upload to upload a single service file
